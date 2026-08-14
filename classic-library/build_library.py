@@ -121,6 +121,7 @@ def render(books):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>sage library — 서가</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&family=Gowun+Batang&display=swap" rel="stylesheet">
 <style>

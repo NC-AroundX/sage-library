@@ -13,7 +13,7 @@
 4. `BOOKLIST.md`에서 해당 책들의 상태를 `완료`로, 완료일을 기입한다.
 5. `reports/` 폴더에 검증 리포트를 작성한다 (아래 형식).
 6. `feedback.md`에 사용자가 남긴 코멘트가 있으면 **카드 작성 전에** 먼저 반영하고, 반영 내역을 리포트에 기록한 뒤 해당 코멘트에 `[반영완료]`를 표시한다.
-7. 배치 완료 후 `python build_library.py`를 실행해 `library.html`을 갱신한다. python 실행이 불가능한 환경이면, `build_library.py`의 로직(프론트매터 파싱 → 마크다운→HTML 변환 → 표지 팔레트 배정 → 단일 HTML 파일 생성)을 그대로 따라 `library.html`을 직접 재생성한다. 어느 방식이든 새로 작성/수정된 카드가 전부 반영됐는지 확인한다.
+7. 배치 완료 후 `python fetch_covers.py` 실행 후 `python build_library.py`를 실행해 `library.html`을 갱신한다. python 실행이 불가능한 환경이면, `build_library.py`의 로직(프론트매터 파싱 → 마크다운→HTML 변환 → 표지 팔레트 배정 → 단일 HTML 파일 생성)을 그대로 따라 `library.html`을 직접 재생성한다. 어느 방식이든 새로 작성/수정된 카드가 전부 반영됐는지 확인한다.
 
 ## 대기열 보충 규칙
 

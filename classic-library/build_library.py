@@ -1,27 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-build_library.py — sage library 웹 뷰어 생성기
-books/*.md 카드를 읽어 library.html 한 파일을 만든다. (의존성 없음, 표준 라이브러리만)
-사용: 프로젝트 폴더에서  python build_library.py
+build_library.py (v3 · 고요서가) — sage library 서가 뷰어 생성기
+Claude Design 시안 '고요서가'의 디자인 언어를 이식한 버전.
+books/*.md 카드를 읽어 library.html + index.html 생성.
+assets/covers/<slug>.jpg 가 있으면 실물 표지, 없으면 분야색 표지.
+사용: classic-library 폴더에서  python build_library.py
 """
-import os, re, glob, html, json, hashlib
+import os, re, glob, html, json, hashlib, datetime, sys
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BOOKS_DIR = os.path.join(ROOT, "books")
-OUT = os.path.join(ROOT, "library.html")
-
-EASTERN_KEYS = ["동양", "한국"]  # 세로쓰기 표지 적용 분야
-
-PALETTES = [  # 분야 해시 → 표지 색 (배경, 잉크, 액센트)
-    ("#1E3A32", "#EFE7D6", "#B8905A"),
-    ("#3A2A24", "#EFE7D6", "#C99A5B"),
-    ("#252C3F", "#EAE6DA", "#A8B48C"),
-    ("#4A2E33", "#F0E8D8", "#C3A15F"),
-    ("#2E3A2A", "#EDE5D2", "#B78B4F"),
-    ("#33313F", "#EBE7DE", "#AD9660"),
-    ("#41352A", "#F0EADB", "#BC9A62"),
-]
+HUES = [25, 70, 150, 210, 290, 340, 50, 185, 110, 260]
 
 def parse_frontmatter(text):
     meta, body = {}, text
@@ -38,8 +32,8 @@ def parse_frontmatter(text):
     return meta, body
 
 def md_to_html(md):
-    lines = md.splitlines()
-    out, i, in_ul, in_ol, in_bq = [], 0, False, False, False
+    lines, out, i = md.splitlines(), [], 0
+    in_ul = in_ol = in_bq = False
     def close():
         nonlocal in_ul, in_ol, in_bq
         if in_ul: out.append("</ul>"); in_ul = False
@@ -49,14 +43,12 @@ def md_to_html(md):
         s = html.escape(s)
         s = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s)
         s = re.sub(r"(?<!\*)\*([^*]+?)\*(?!\*)", r"<em>\1</em>", s)
-        s = re.sub(r"`([^`]+?)`", r"<code>\1</code>", s)
         return s
     while i < len(lines):
         ln = lines[i]
         if re.match(r"^\s*$", ln): close(); i += 1; continue
         h = re.match(r"^(#{1,4})\s+(.*)", ln)
         if h: close(); lv = min(len(h.group(1)) + 1, 5); out.append(f"<h{lv}>{inline(h.group(2))}</h{lv}>"); i += 1; continue
-        if re.match(r"^---+\s*$", ln): close(); out.append("<hr>"); i += 1; continue
         if ln.startswith(">"):
             if not in_bq: close(); out.append("<blockquote>"); in_bq = True
             out.append(f"<p>{inline(ln.lstrip('> '))}</p>"); i += 1; continue
@@ -85,7 +77,7 @@ def md_to_html(md):
     return "\n".join(out)
 
 def one_liner(body):
-    m = re.search(r"\*\*한 줄 정의:?\*\*\s*(.+)", body)
+    m = re.search(r"\*\*한 줄 (?:정의|정수):?\*\*\s*(.+)", body)
     return m.group(1).strip() if m else ""
 
 def load_books():
@@ -95,135 +87,201 @@ def load_books():
         with open(path, encoding="utf-8") as f: text = f.read()
         meta, body = parse_frontmatter(text)
         cat = str(meta.get("category", "기타"))
-        idx = int(hashlib.md5(cat.split("·")[0].encode()).hexdigest(), 16) % len(PALETTES)
-        bg, ink, acc = PALETTES[idx]
+        main_cat = cat.split("·")[0]
+        slug = str(meta.get("slug", os.path.splitext(os.path.basename(path))[0]))
+        hue = HUES[int(hashlib.md5(main_cat.encode()).hexdigest(), 16) % len(HUES)]
+        has_cover = os.path.exists(os.path.join(ROOT, "assets", "covers", f"{slug}.jpg"))
         books.append({
-            "title": str(meta.get("title", os.path.basename(path))).split("(")[0].strip(),
+            "title": str(meta.get("title", "")).split("(")[0].strip() or slug,
             "full_title": str(meta.get("title", "")),
             "author": str(meta.get("author", "")),
             "era": str(meta.get("era", "")),
-            "category": cat,
+            "category": cat, "main_cat": main_cat, "hue": hue,
             "tags": meta.get("tags", []) if isinstance(meta.get("tags"), list) else [],
             "reliability": str(meta.get("reliability", "미상")),
-            "vertical": any(k in cat for k in EASTERN_KEYS),
-            "bg": bg, "ink": ink, "acc": acc,
+            "cover": f"assets/covers/{slug}.jpg" if has_cover else "",
             "one": one_liner(body),
             "html": md_to_html(body),
         })
     return books
 
 def render(books):
-    cats = sorted({b["category"].split("·")[0] for b in books})
-    data = json.dumps(books, ensure_ascii=False).replace("</", "<\\/")
+    cats = sorted({b["main_cat"] for b in books},
+                  key=lambda c: -sum(1 for b in books if b["main_cat"] == c))
     n = len(books)
+    covers_n = sum(1 for b in books if b["cover"])
+    feat_i = int(hashlib.md5(datetime.date.today().isoformat().encode()).hexdigest(), 16) % n if n else 0
+    data = json.dumps(books, ensure_ascii=False).replace("</", "<\\/")
     return """<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>sage library — 서가</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&family=Gowun+Batang&display=swap" rel="stylesheet">
+<title>고요서가 — sage library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--night:#101815;--night2:#16211C;--paper:#EFE7D6;--paper-dim:#C9BFA8;--brass:#B8905A;--oxblood:#8A4636;--line:rgba(239,231,214,.14)}
+html{scroll-behavior:smooth}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--night);color:var(--paper);font-family:'Gowun Batang','Noto Serif KR',serif;-webkit-font-smoothing:antialiased}
-a{color:var(--brass)}
-header{padding:56px 6vw 28px;border-bottom:1px solid var(--line)}
-.eyebrow{font-size:12px;letter-spacing:.35em;color:var(--brass);text-transform:uppercase}
-h1{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(30px,4.5vw,52px);margin:10px 0 6px}
-.sub{color:var(--paper-dim);font-size:15px}
-.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:18px 6vw;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(16,24,21,.92);backdrop-filter:blur(8px);z-index:5}
-.chip{border:1px solid var(--line);background:none;color:var(--paper-dim);padding:7px 14px;border-radius:999px;font-family:inherit;font-size:13px;cursor:pointer;transition:.2s}
-.chip:hover{border-color:var(--brass);color:var(--paper)}
-.chip.on{background:var(--brass);border-color:var(--brass);color:#171310;font-weight:700}
-#q{margin-left:auto;background:var(--night2);border:1px solid var(--line);color:var(--paper);padding:9px 14px;border-radius:8px;font-family:inherit;font-size:14px;min-width:200px}
-#q:focus{outline:2px solid var(--brass);outline-offset:1px}
-.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:34px 26px;padding:40px 6vw 80px}
-.slot{display:flex;flex-direction:column;gap:10px;cursor:pointer;background:none;border:none;text-align:left;font-family:inherit;color:var(--paper)}
-.cover{aspect-ratio:2/3;border-radius:3px 8px 8px 3px;position:relative;padding:16px 14px;display:flex;box-shadow:0 12px 24px rgba(0,0,0,.45), inset 4px 0 0 rgba(0,0,0,.25), inset 6px 0 0 rgba(255,255,255,.06);transition:transform .25s, box-shadow .25s;overflow:hidden}
-.slot:hover .cover,.slot:focus-visible .cover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 22px 34px rgba(0,0,0,.55), inset 4px 0 0 rgba(0,0,0,.25)}
-.slot:focus-visible{outline:2px solid var(--brass);outline-offset:4px;border-radius:8px}
-.cover .frame{position:absolute;inset:8px;border:1px solid;opacity:.5;border-radius:2px 5px 5px 2px;pointer-events:none}
-.cover .t{font-family:'Noto Serif KR',serif;font-weight:900;font-size:clamp(16px,1.6vw,21px);line-height:1.35;word-break:keep-all}
-.cover .a{position:absolute;bottom:14px;left:14px;right:14px;font-size:11.5px;letter-spacing:.08em;opacity:.85}
-.cover.v{justify-content:flex-end}
-.cover.v .t{writing-mode:vertical-rl;text-orientation:upright;letter-spacing:.28em;margin:6px 4px 0 0}
-.cover.v .a{writing-mode:vertical-rl;left:16px;right:auto;top:16px;bottom:auto;letter-spacing:.2em}
-.cover .seal{position:absolute;width:22px;height:22px;border-radius:4px;background:var(--oxblood);bottom:14px;right:14px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#EFE7D6;font-weight:700}
-.meta .bt{font-weight:700;font-size:14.5px}
-.meta .bs{color:var(--paper-dim);font-size:12.5px;margin-top:3px}
-.badge{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
-.b-원전기반{background:#8FAE6B}.b-요약검증{background:#C99A5B}.b-미검증,.b-미상{background:#777}
-.count{padding:0 6vw;margin-top:26px;color:var(--paper-dim);font-size:13px;letter-spacing:.15em}
-dialog{width:min(760px,92vw);max-height:86vh;background:var(--paper);color:#241F17;border:none;border-radius:10px;padding:0}
-dialog::backdrop{background:rgba(8,12,10,.72);backdrop-filter:blur(3px)}
-.dhead{padding:30px 38px 20px;border-bottom:1px solid rgba(36,31,23,.15);position:sticky;top:0;background:var(--paper)}
-.dhead .cat{font-size:12px;letter-spacing:.3em;color:var(--oxblood)}
-.dhead h2{font-family:'Noto Serif KR',serif;font-weight:900;font-size:26px;margin:6px 0 4px}
-.dhead .who{color:#6B6353;font-size:14px}
-.dbody{padding:26px 38px 44px;overflow-y:auto;font-size:15.5px;line-height:1.85}
-.dbody h3{font-family:'Noto Serif KR',serif;margin:26px 0 10px;font-size:19px;border-bottom:1px solid rgba(36,31,23,.15);padding-bottom:6px}
-.dbody h4,.dbody h5{margin:18px 0 8px}
-.dbody p{margin:10px 0}.dbody ul,.dbody ol{margin:10px 0 10px 22px}.dbody li{margin:7px 0}
-.dbody blockquote{border-left:3px solid var(--brass);padding-left:14px;color:#5C5443;margin:12px 0}
-.dbody em{color:#6E5A33}
-.close{position:absolute;top:22px;right:24px;background:none;border:1px solid rgba(36,31,23,.3);border-radius:999px;width:34px;height:34px;font-size:16px;cursor:pointer;font-family:inherit}
-.empty{padding:60px 6vw;color:var(--paper-dim)}
+::-webkit-scrollbar{height:8px;width:10px}
+::-webkit-scrollbar-thumb{background:oklch(80% .02 70);border-radius:4px}
+body{font-family:'Noto Serif KR',serif;background:oklch(97% .014 75);color:oklch(20% .02 50);min-height:100vh}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:18px 48px;background:oklch(97% .014 75 / .92);backdrop-filter:blur(8px);border-bottom:1px solid oklch(20% .02 50 / .08)}
+.brand{font-family:'Nanum Myeongjo',serif;font-size:25px;font-weight:800;letter-spacing:.5px}
+nav{display:flex;gap:22px;font-size:14.5px;color:oklch(45% .02 50);flex-wrap:wrap}
+nav a:hover{color:oklch(20% .02 50)}
+.searchpill{display:flex;align-items:center;gap:10px;background:oklch(92% .02 75);border-radius:999px;padding:10px 18px;width:clamp(180px,24vw,300px)}
+.searchpill input{border:none;background:transparent;outline:none;font-family:inherit;font-size:14px;color:oklch(20% .02 50);width:100%}
+.hero{margin:38px 48px 60px;padding:52px;background:oklch(94% .02 75);border-radius:20px;box-shadow:0 20px 50px oklch(20% .02 50 / .08);display:flex;align-items:center;gap:56px;flex-wrap:wrap}
+.bookcover{position:relative;border-radius:3px 10px 10px 3px;overflow:hidden;flex-shrink:0}
+.bookcover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bookcover .spine{position:absolute;left:0;top:0;bottom:0;z-index:2}
+.bookcover .gen{position:absolute;left:0;right:0;bottom:0;padding:14px;display:flex;flex-direction:column;gap:6px;z-index:1}
+.bookcover .gen .rule{width:22px;height:1px;background:oklch(96% .01 75 / .3)}
+.bookcover .gen .t{font-family:'Nanum Myeongjo',serif;font-weight:600;color:oklch(97% .01 75);line-height:1.35;word-break:keep-all}
+.bookcover .gen .a{color:oklch(97% .01 75 / .7)}
+.hero .bookcover{width:280px;height:420px;box-shadow:0 30px 60px oklch(20% .02 50 / .28), 0 8px 16px oklch(20% .02 50 / .15)}
+.hero .bookcover .spine{width:7px}
+.hero .bookcover .gen .t{font-size:22px}.hero .bookcover .gen .a{font-size:13px}
+.hero .txt{flex:1;min-width:260px}
+.hero .eyebrow{font-size:12px;letter-spacing:.32em;color:oklch(50% .06 60);text-transform:uppercase}
+.hero h1{font-family:'Nanum Myeongjo',serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);margin:12px 0 8px;line-height:1.25;word-break:keep-all}
+.hero .who{font-size:15px;color:oklch(45% .02 50)}
+.hero .one{margin-top:16px;font-size:15.5px;line-height:1.85;color:oklch(30% .02 50);max-width:58ch;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.hero button{margin-top:22px;font-family:inherit;font-size:14.5px;background:oklch(24% .03 50);color:oklch(97% .01 75);border:none;border-radius:999px;padding:12px 26px;cursor:pointer}
+.hero button:hover{background:oklch(34% .06 40)}
+.stats{padding:0 48px 8px;font-size:13px;color:oklch(45% .02 50);letter-spacing:.08em}
+.shelfsec{margin:0 0 58px;scroll-margin-top:100px}
+.shelfhead{display:flex;align-items:baseline;justify-content:space-between;padding:0 48px 16px}
+.shelfhead h2{font-family:'Nanum Myeongjo',serif;font-size:25px;font-weight:700}
+.shelfhead .cnt{font-size:13.5px;color:oklch(45% .02 50)}
+.shelfwrap{position:relative;padding:0 48px 30px}
+.row{display:flex;gap:26px;overflow-x:auto;padding:10px 0 24px;align-items:flex-end}
+.slot{flex-shrink:0;background:none;border:none;cursor:pointer;font-family:inherit;padding:0}
+.slot .bookcover{width:148px;height:222px;box-shadow:0 10px 16px oklch(20% .02 50 / .28);transition:transform .25s ease, box-shadow .25s ease}
+.slot .bookcover .spine{width:5px}
+.slot .bookcover .gen .t{font-size:14px}.slot .bookcover .gen .a{font-size:10.5px}
+.slot:hover .bookcover,.slot:focus-visible .bookcover{transform:translateY(-10px);box-shadow:0 26px 32px oklch(20% .02 50 / .32)}
+.slot:focus-visible{outline:2px solid oklch(50% .1 60);outline-offset:4px;border-radius:8px}
+.shelfbar{position:absolute;left:48px;right:48px;bottom:14px;height:14px;border-radius:2px;background:linear-gradient(oklch(84% .03 70), oklch(76% .035 65));box-shadow:0 10px 18px oklch(20% .02 50 / .22)}
+.empty{padding:40px 48px 80px;color:oklch(45% .02 50)}
+dialog{width:min(780px,94vw);max-height:88vh;background:oklch(97% .014 75);color:oklch(20% .02 50);border:none;border-radius:14px;padding:0;box-shadow:0 40px 80px oklch(20% .02 50 / .4)}
+dialog::backdrop{background:oklch(20% .02 50 / .55);backdrop-filter:blur(3px)}
+.dwrap{display:flex;gap:38px;padding:46px;flex-wrap:wrap}
+.dwrap .bookcover{width:210px;height:315px;box-shadow:0 24px 40px oklch(20% .02 50 / .3)}
+.dwrap .bookcover .spine{width:6px}
+.dwrap .bookcover .gen .t{font-size:17px}.dwrap .bookcover .gen .a{font-size:11.5px}
+.dtxt{flex:1;min-width:260px;display:flex;flex-direction:column;gap:13px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:12px;padding:4px 12px;border-radius:999px}
+.dtxt h2{font-family:'Nanum Myeongjo',serif;font-size:29px;font-weight:800;line-height:1.3;word-break:keep-all}
+.dtxt .who{font-size:15px;color:oklch(45% .02 50)}
+.hr{height:1px;background:oklch(20% .02 50 / .1);margin:4px 0}
+.done{font-size:15.5px;line-height:1.8;color:oklch(28% .02 50)}
+.dbody{font-size:15px;line-height:1.85;color:oklch(34% .02 50)}
+.dbody h2,.dbody h3{font-family:'Nanum Myeongjo',serif;margin:22px 0 9px;font-size:18px;color:oklch(22% .02 50);border-bottom:1px solid oklch(20% .02 50 / .1);padding-bottom:6px}
+.dbody h4,.dbody h5{margin:15px 0 7px;color:oklch(24% .02 50)}
+.dbody p{margin:9px 0}.dbody ul,.dbody ol{margin:9px 0 9px 20px}.dbody li{margin:6px 0}
+.dbody blockquote{border-left:3px solid oklch(60% .08 70);padding-left:13px;color:oklch(45% .02 50);margin:11px 0}
+.dbody em{color:oklch(45% .09 60)}
+.dclose{position:absolute;top:16px;right:20px;border:none;background:transparent;font-size:23px;cursor:pointer;color:oklch(45% .02 50);font-family:serif}
+.dclose:hover{color:oklch(20% .02 50)}
+footer{padding:40px 48px 60px;font-size:12.5px;color:oklch(55% .02 50);letter-spacing:.08em}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
-@media (max-width:560px){.shelf{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:24px 16px}.dhead,.dbody{padding-left:22px;padding-right:22px}}
+@media (max-width:680px){header,.stats,.shelfhead,.empty,footer{padding-left:20px;padding-right:20px}
+ .hero{margin:24px 20px 44px;padding:30px 22px;gap:28px;flex-direction:column-reverse;text-align:center}
+ .hero .one{-webkit-line-clamp:4}.hero .bookcover{width:190px;height:285px}
+ .shelfwrap{padding:0 20px 30px}.shelfbar{left:20px;right:20px}
+ .dwrap{padding:26px 20px;gap:22px}.dwrap .bookcover{margin:0 auto}}
 </style>
 </head>
 <body>
 <header>
-  <div class="eyebrow">Sage Library</div>
-  <h1>인사이트 서가</h1>
-  <div class="sub">책 __N__권 · 카드를 누르면 개요와 인사이트가 열립니다 · <span class="badge b-원전기반"></span>원전기반 <span class="badge b-요약검증"></span>요약검증</div>
+  <a class="brand" href="#top">고요서가</a>
+  <nav id="nav"></nav>
+  <div class="searchpill">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="oklch(45% 0.02 50)" stroke-width="2.4"><circle cx="10.5" cy="10.5" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
+    <input id="q" type="search" placeholder="책 제목, 저자, 태그 검색">
+  </div>
 </header>
-<div class="toolbar" id="chips"><input id="q" type="search" placeholder="제목·저자·태그 검색"></div>
-<div class="count" id="count"></div>
-<div class="shelf" id="shelf"></div>
-<dialog id="dlg"><button class="close" onclick="dlg.close()" aria-label="닫기">✕</button><div class="dhead"><div class="cat" id="dcat"></div><h2 id="dtitle"></h2><div class="who" id="dwho"></div></div><div class="dbody" id="dbody"></div></dialog>
+<div id="top"></div>
+
+<section class="hero" id="hero"></section>
+<div class="stats">서가의 책 __N__권 · 실물 표지 __C__권 · 매주 자동으로 자랍니다</div>
+<div id="shelves"></div>
+<footer>고요서가 — sage library · 스스로 자라는 개인 인사이트 서가</footer>
+
+<dialog id="dlg"><button class="dclose" onclick="dlg.close()" aria-label="닫기">×</button><div class="dwrap" id="dwrap"></div></dialog>
 <script>
 const BOOKS=__DATA__;
 const CATS=__CATS__;
-let cat="전체", q="";
-const chips=document.getElementById("chips"), shelf=document.getElementById("shelf");
-["전체",...CATS].forEach(c=>{const b=document.createElement("button");b.className="chip"+(c==="전체"?" on":"");b.textContent=c;b.onclick=()=>{cat=c;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x===b));draw()};chips.insertBefore(b,document.getElementById("q"))});
+const FEAT=__FEAT__;
+let q="";
+const catId=c=>"cat-"+encodeURIComponent(c).replace(/%/g,"");
+function coverHTML(b){
+  const spine=`<div class="spine" style="background:oklch(22% .05 ${b.hue})"></div>`;
+  if(b.cover) return `<div class="bookcover">${spine}<img src="${b.cover}" alt="" loading="lazy"></div>`;
+  return `<div class="bookcover" style="background:linear-gradient(160deg, oklch(40% .07 ${b.hue}), oklch(25% .06 ${b.hue}))">${spine}
+    <div class="gen"><div class="rule"></div><div class="t">${b.title}</div><div class="a">${b.author}</div></div></div>`;
+}
+document.getElementById("nav").innerHTML=CATS.map(c=>`<a href="#${catId(c)}">${c}</a>`).join("");
 document.getElementById("q").addEventListener("input",e=>{q=e.target.value.trim().toLowerCase();draw()});
-function match(b){const inCat=cat==="전체"||b.category.startsWith(cat);const hay=(b.title+b.author+b.category+(b.tags||[]).join(" ")).toLowerCase();return inCat&&(!q||hay.includes(q))}
+function match(b){const hay=(b.title+b.author+b.category+(b.tags||[]).join(" ")).toLowerCase();return !q||hay.includes(q)}
 function draw(){
+  const shelves=document.getElementById("shelves");
   const list=BOOKS.filter(match);
-  document.getElementById("count").textContent=list.length+" / "+BOOKS.length+"권";
-  shelf.innerHTML="";
-  if(!list.length){shelf.innerHTML='<div class="empty">이 조건에 맞는 책이 아직 서가에 없습니다. 검색어를 지우거나 다른 분야를 눌러보세요.</div>';return}
-  list.forEach((b,i)=>{
-    const el=document.createElement("button");el.className="slot";
-    el.innerHTML=`<div class="cover ${b.vertical?"v":""}" style="background:${b.bg};color:${b.ink}">
-      <div class="frame" style="border-color:${b.acc}"></div>
-      <div class="t">${b.title}</div><div class="a">${b.author}</div>
-      ${b.vertical?`<div class="seal">${b.title[0]||""}</div>`:""}
-    </div>
-    <div class="meta"><div class="bt"><span class="badge b-${b.reliability}"></span>${b.title}</div><div class="bs">${b.author} · ${b.category}</div></div>`;
-    el.onclick=()=>open(b);
-    shelf.appendChild(el);
+  shelves.innerHTML="";
+  if(!list.length){shelves.innerHTML='<div class="empty">이 검색어에 맞는 책이 서가에 없습니다.</div>';return}
+  const groups={};
+  list.forEach(b=>{(groups[b.main_cat]=groups[b.main_cat]||[]).push(b)});
+  CATS.filter(c=>groups[c]).forEach(c=>{
+    const sec=document.createElement("section");sec.className="shelfsec";sec.id=catId(c);
+    sec.innerHTML=`<div class="shelfhead"><h2>${c}</h2><span class="cnt">${groups[c].length}권</span></div>`;
+    const wrap=document.createElement("div");wrap.className="shelfwrap";
+    const row=document.createElement("div");row.className="row";
+    groups[c].forEach(b=>{
+      const el=document.createElement("button");el.className="slot";el.title=b.title+" · "+b.author;
+      el.innerHTML=coverHTML(b);
+      el.onclick=()=>open(b);row.appendChild(el);
+    });
+    wrap.appendChild(row);
+    wrap.insertAdjacentHTML("beforeend",'<div class="shelfbar"></div>');
+    sec.appendChild(wrap);shelves.appendChild(sec);
   });
 }
 function open(b){
-  document.getElementById("dcat").textContent=b.category+" · "+b.era+" · "+b.reliability;
-  document.getElementById("dtitle").textContent=b.full_title||b.title;
-  document.getElementById("dwho").textContent=b.author;
-  document.getElementById("dbody").innerHTML=b.html;
-  document.getElementById("dbody").scrollTop=0;
-  dlg.showModal();
+  document.getElementById("dwrap").innerHTML=coverHTML(b)+`
+    <div class="dtxt">
+      <div class="chips">
+        <span class="chip" style="background:oklch(90% .05 ${b.hue});color:oklch(35% .09 ${b.hue})">${b.category}</span>
+        <span class="chip" style="background:oklch(92% .02 75);color:oklch(40% .02 50)">${b.reliability}</span>
+      </div>
+      <h2>${b.full_title||b.title}</h2>
+      <div class="who">${b.author} 지음 · ${b.era}</div>
+      <div class="hr"></div>
+      <p class="done">${b.one}</p>
+      <div class="dbody">${b.html}</div>
+    </div>`;
+  dlg.showModal();dlg.scrollTop=0;
 }
+(function(){const f=BOOKS[FEAT];if(!f)return;
+ document.getElementById("hero").innerHTML=coverHTML(f)+`
+   <div class="txt"><div class="eyebrow">오늘의 책</div>
+   <h1>${f.title}</h1><div class="who">${f.author} 지음 · ${f.category}</div>
+   <div class="one">${f.one}</div><button id="fopen">이 책의 카드 열기</button></div>`;
+ document.getElementById("fopen").onclick=()=>open(f);
+})();
 draw();
 </script>
 </body>
-</html>""".replace("__DATA__", data).replace("__CATS__", json.dumps(cats, ensure_ascii=False)).replace("__N__", str(n))
+</html>""".replace("__DATA__", data).replace("__CATS__", json.dumps(cats, ensure_ascii=False)).replace("__N__", str(n)).replace("__C__", str(covers_n)).replace("__FEAT__", str(feat_i))
 
 if __name__ == "__main__":
     books = load_books()
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write(render(books))
-    print(f"library.html 생성 완료 — {len(books)}권 수록")
+    out = render(books)
+    for name in ("library.html", "index.html"):
+        with open(os.path.join(ROOT, name), "w", encoding="utf-8") as f:
+            f.write(out)
+    print(f"library.html + index.html 생성 완료 — {len(books)}권 (실물 표지 {sum(1 for b in books if b['cover'])}권)")

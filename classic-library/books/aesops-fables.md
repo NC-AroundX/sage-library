@@ -2,7 +2,7 @@
 title: 이솝 우화 (Aesop's Fables)
 author: 이솝 (Aisōpos, 전승 편찬)
 era: 기원전 6세기경 구전, 이후 여러 판본으로 편찬·전승
-category: 우화·처세
+category: 문학
 tags: [우화, 도덕교훈, 처세, 인간본성, 이야기의힘]
 reliability: 원전기반
 slug: aesops-fables

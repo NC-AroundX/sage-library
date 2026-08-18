@@ -2,7 +2,7 @@
 title: 아이네이스
 author: 베르길리우스
 era: 기원전 1세기(기원전 29~19년경 집필), 아우구스투스 시대 로마
-category: 문학·서사시
+category: 문학
 tags: [로마건국신화, 운명과경건함, 제국의대가, 저승하강, 정치적서사시]
 reliability: 원전기반
 track: greatbooks

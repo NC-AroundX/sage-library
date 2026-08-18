@@ -2,8 +2,8 @@
 title: 오디세이아 (Odysseia)
 author: 호메로스
 era: 기원전 8세기경 정착, 고대 그리스
-category: 문학·서사시
-tags: [귀환, 영웅의여정, 지략, 인내, 정체성]
+category: 문학
+tags: [귀환, 영웅의여정, 지략, 인내, 정체성, 서사시]
 reliability: 원전기반
 track: greatbooks
 slug: odyssey

@@ -2,8 +2,8 @@
 title: 프린키피아 (자연철학의 수학적 원리) — 개요와 의의
 author: 아이작 뉴턴
 era: 1687년, 잉글랜드
-category: 과학사
-tags: [만유인력, 운동법칙, 수학적자연법칙, 결정론적우주관, 과학혁명의완성]
+category: 과학·자연
+tags: [만유인력, 운동법칙, 수학적자연법칙, 결정론적우주관, 과학혁명의완성, 과학사]
 reliability: 원전기반
 track: greatbooks
 slug: principia-newton

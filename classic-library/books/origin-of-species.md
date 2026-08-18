@@ -2,8 +2,8 @@
 title: 종의 기원 (On the Origin of Species)
 author: 찰스 다윈
 era: 1859년, 빅토리아 시대 영국
-category: 과학·자연사
-tags: [진화, 적응, 변이, 선택, 변화관리]
+category: 과학·자연
+tags: [진화, 적응, 변이, 선택, 변화관리, 자연사]
 reliability: 원전기반
 slug: origin-of-species
 ---

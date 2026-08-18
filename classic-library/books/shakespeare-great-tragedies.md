@@ -2,8 +2,8 @@
 title: 셰익스피어 3대 비극 (리어왕·맥베스·오셀로)
 author: 윌리엄 셰익스피어
 era: 1603~1606년경, 영국 엘리자베스/제임스 1세 시대
-category: 문학·희곡
-tags: [권력의몰락, 야망과죄책감, 질투와조작, 인간의취약함, 비극적결함]
+category: 문학
+tags: [권력의몰락, 야망과죄책감, 질투와조작, 인간의취약함, 비극적결함, 희곡]
 reliability: 원전기반
 track: greatbooks
 slug: shakespeare-great-tragedies

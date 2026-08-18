@@ -2,7 +2,7 @@
 title: 캉디드
 author: 볼테르
 era: 1759년, 프랑스(제네바 발간)
-category: 문학·풍자
+category: 문학
 tags: [낙관주의비판, 라이프니츠풍자, 여정형서사, 현실주의, 노동의가치]
 reliability: 원전기반
 track: greatbooks

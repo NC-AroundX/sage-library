@@ -2,7 +2,7 @@
 title: 가르강튀아와 팡타그뤼엘
 author: 프랑수아 라블레
 era: 16세기(1532~1564년경), 프랑스 르네상스
-category: 문학·풍자
+category: 문학
 tags: [풍자, 과잉과유쾌함, 인문주의교육, 육체성, 언어유희]
 reliability: 원전기반
 track: greatbooks

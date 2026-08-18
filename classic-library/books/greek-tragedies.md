@@ -2,7 +2,7 @@
 title: 그리스 3대 비극 (오이디푸스 왕·오레스테이아·메데이아)
 author: 소포클레스·아이스킬로스·에우리피데스
 era: 기원전 5세기, 고대 아테네
-category: 문학·비극
+category: 문학
 tags: [운명, 복수와정의, 자기인식, 카타르시스, 비극적결함]
 reliability: 원전기반
 track: greatbooks

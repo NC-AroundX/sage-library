@@ -2,8 +2,8 @@
 title: 아리스토파네스 희극선 (구름·리시스트라테)
 author: 아리스토파네스
 era: 기원전 5세기 말, 고대 아테네
-category: 문학·희극
-tags: [정치풍자, 반전, 여성연대, 협상력, 표현의자유]
+category: 문학
+tags: [정치풍자, 반전, 여성연대, 협상력, 표현의자유, 희극]
 reliability: 원전기반
 track: greatbooks
 slug: aristophanes-comedies

@@ -2,8 +2,8 @@
 title: 유한계급론 (The Theory of the Leisure Class)
 author: 소스타인 베블런 (Thorstein Veblen)
 era: 1899년, 미국 도금시대 말~진보시대 초입
-category: 경제·사회
-tags: [과시적소비, 유한계급, 모방소비, 지위경쟁, 제도경제학]
+category: 경제·경영
+tags: [과시적소비, 유한계급, 모방소비, 지위경쟁, 제도경제학, 사회]
 reliability: 원전기반
 slug: theory-of-the-leisure-class
 ---

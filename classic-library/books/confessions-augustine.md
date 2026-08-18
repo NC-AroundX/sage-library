@@ -2,8 +2,8 @@
 title: 고백록
 author: 아우구스티누스
 era: 기원후 397~400년경, 고대 로마(북아프리카)
-category: 철학·신학
-tags: [회심, 자기성찰, 은총, 시간론, 자서전의기원]
+category: 철학·사상
+tags: [회심, 자기성찰, 은총, 시간론, 자서전의기원, 신학]
 reliability: 원전기반
 track: greatbooks
 slug: confessions-augustine

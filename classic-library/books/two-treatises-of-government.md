@@ -2,8 +2,8 @@
 title: 통치론 (시민정부에 관한 두 논고)
 author: 존 로크
 era: 1689년, 잉글랜드
-category: 정치철학
-tags: [자연권, 재산권, 저항권, 사회계약, 권력분립]
+category: 정치·사회
+tags: [자연권, 재산권, 저항권, 사회계약, 권력분립, 정치철학]
 reliability: 원전기반
 track: greatbooks
 slug: two-treatises-of-government

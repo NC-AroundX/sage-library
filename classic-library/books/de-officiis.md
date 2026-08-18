@@ -2,8 +2,8 @@
 title: 의무론 (De Officiis)
 author: 마르쿠스 툴리우스 키케로(Marcus Tullius Cicero)
 era: 기원전 44년, 로마 공화정 말기
-category: 서양철학·윤리
-tags: [실천윤리, 명예로움과유익함, 리더의처신, 스토아철학, 공직윤리]
+category: 자기수양·삶
+tags: [실천윤리, 명예로움과유익함, 리더의처신, 스토아철학, 공직윤리, 서양철학]
 reliability: 원전기반
 slug: de-officiis
 ---

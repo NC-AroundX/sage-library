@@ -2,8 +2,8 @@
 title: 과학혁명 3인 (코페르니쿠스·갈릴레오·하비)
 author: 니콜라우스 코페르니쿠스·갈릴레오 갈릴레이·윌리엄 하비
 era: 1543~1628년, 유럽 (폴란드·이탈리아·잉글랜드)
-category: 과학사
-tags: [패러다임전환, 관찰과증거, 권위에대한도전, 실험과학, 인체이해]
+category: 과학·자연
+tags: [패러다임전환, 관찰과증거, 권위에대한도전, 실험과학, 인체이해, 과학사]
 reliability: 원전기반
 track: greatbooks
 slug: scientific-revolution-trio

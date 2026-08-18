@@ -2,7 +2,7 @@
 title: 플루타르코스 영웅전 (대비열전, Parallel Lives)
 author: 플루타르코스 (Plutarchos)
 era: 1세기 말~2세기 초, 로마제국 시대 그리스
-category: 역사·인물론
+category: 역사·인물
 tags: [인물론, 리더십, 비교전기, 도덕교훈, 서양고전]
 reliability: 원전기반
 slug: plutarch-lives

@@ -2,8 +2,8 @@
 title: 니코마코스 윤리학 (Ethica Nicomachea)
 author: 아리스토텔레스
 era: 기원전 4세기, 고대 그리스
-category: 서양철학·윤리
-tags: [행복, 습관, 탁월함, 중용, 우정]
+category: 철학·사상
+tags: [행복, 습관, 탁월함, 중용, 우정, 서양철학, 윤리]
 reliability: 원전기반
 slug: nicomachean-ethics
 ---

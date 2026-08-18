@@ -2,8 +2,8 @@
 title: 펠로폰네소스 전쟁사
 author: 투키디데스 (Thucydides)
 era: 기원전 5세기말~4세기초(집필), 고대 그리스
-category: 역사·전략
-tags: [국제정치, 권력정치, 투키디데스의함정, 전쟁의원인, 현실주의]
+category: 역사·인물
+tags: [국제정치, 권력정치, 투키디데스의함정, 전쟁의원인, 현실주의, 전략]
 reliability: 원전기반
 slug: thucydides-peloponnesian-war
 ---

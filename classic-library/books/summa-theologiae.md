@@ -2,8 +2,8 @@
 title: 신학대전 (선집 — 신 존재 증명·자연법)
 author: 토마스 아퀴나스
 era: 기원후 1265~1274년경(미완성), 중세 유럽(파리·이탈리아)
-category: 철학·신학
-tags: [스콜라철학, 신존재증명, 자연법, 아리스토텔레스종합, 신앙과이성]
+category: 철학·사상
+tags: [스콜라철학, 신존재증명, 자연법, 아리스토텔레스종합, 신앙과이성, 신학]
 reliability: 원전기반
 track: greatbooks
 slug: summa-theologiae

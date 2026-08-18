@@ -2,7 +2,7 @@
 title: 손자병법 (孫子兵法)
 author: 손무 (孫武)
 era: 기원전 5세기경, 중국 춘추시대
-category: 전략
+category: 전략·리더십
 tags: [전략, 경쟁, 협상, 의사결정, 정보]
 reliability: 원전기반
 slug: art-of-war

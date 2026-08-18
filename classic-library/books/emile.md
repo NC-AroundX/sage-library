@@ -2,7 +2,7 @@
 title: 에밀 (Émile, ou De l'éducation)
 author: 장자크 루소(Jean-Jacques Rousseau)
 era: 1762년, 프랑스 계몽주의 시기
-category: 교육
+category: 철학·사상
 tags: [자연교육, 아동중심, 경험학습, 성장단계론, 자율성]
 reliability: 원전기반
 slug: emile

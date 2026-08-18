@@ -2,7 +2,7 @@
 title: 몰리에르 희곡선 (타르튀프·수전노)
 author: 몰리에르
 era: 1664년(타르튀프)·1668년(수전노), 프랑스
-category: 문학·희극
+category: 문학
 tags: [위선비판, 탐욕의희극화, 성격희극, 사회풍자, 결말의인위성]
 reliability: 원전기반
 track: greatbooks

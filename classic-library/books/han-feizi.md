@@ -2,8 +2,8 @@
 title: 한비자 (韓非子)
 author: 한비(韓非)
 era: 기원전 3세기, 중국 전국시대 말기
-category: 동양사상·법가
-tags: [법치, 술치, 세, 조직설계, 인센티브]
+category: 전략·리더십
+tags: [법치, 술치, 세, 조직설계, 인센티브, 동양사상, 법가]
 reliability: 원전기반
 slug: han-feizi
 ---

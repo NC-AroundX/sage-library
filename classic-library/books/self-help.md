@@ -2,8 +2,8 @@
 title: 자조론 (Self-Help)
 author: 새뮤얼 스마일스 (Samuel Smiles)
 era: 1859년, 빅토리아시대 영국 산업혁명기
-category: 자기계발·처세
-tags: [자기계발, 근면, 인격, 산업혁명, 성공담]
+category: 자기수양·삶
+tags: [자기계발, 근면, 인격, 산업혁명, 성공담, 처세]
 reliability: 원전기반
 slug: self-help
 ---

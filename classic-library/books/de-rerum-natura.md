@@ -2,8 +2,8 @@
 title: 사물의 본성에 관하여 (De Rerum Natura)
 author: 루크레티우스
 era: 기원전 1세기, 고대 로마
-category: 철학·자연학
-tags: [원자론, 죽음불안, 유물론, 평정심, 미신비판]
+category: 철학·사상
+tags: [원자론, 죽음불안, 유물론, 평정심, 미신비판, 자연학]
 reliability: 원전기반
 track: greatbooks
 slug: de-rerum-natura

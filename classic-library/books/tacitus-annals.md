@@ -2,7 +2,7 @@
 title: 연대기
 author: 타키투스
 era: 기원후 1~2세기(117년경 완성 추정), 고대 로마
-category: 역사
+category: 역사·인물
 tags: [권력의부패, 황제정치, 역사서술방법, 감시와밀고, 조직정치]
 reliability: 원전기반
 track: greatbooks

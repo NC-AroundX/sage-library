@@ -2,8 +2,8 @@
 title: 공리주의
 author: 존 스튜어트 밀
 era: 1863년(단행본, 원래 1861년 잡지 연재), 잉글랜드
-category: 정치철학·윤리
-tags: [최대다수의최대행복, 쾌락의질적구분, 정의와공리의관계, 규칙과행위, 벤담과의차별화]
+category: 철학·사상
+tags: [최대다수의최대행복, 쾌락의질적구분, 정의와공리의관계, 규칙과행위, 벤담과의차별화, 정치철학, 윤리]
 reliability: 원전기반
 track: greatbooks
 slug: utilitarianism

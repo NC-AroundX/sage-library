@@ -2,8 +2,8 @@
 title: 햄릿 (Hamlet)
 author: 윌리엄 셰익스피어
 era: 1600~1601년경, 영국 (덴마크 궁정 배경) ⚠️
-category: 문학·희곡
-tags: [결단, 실존, 복수, 우유부단, 리더십의공백]
+category: 문학
+tags: [결단, 실존, 복수, 우유부단, 리더십의공백, 희곡]
 reliability: 원전기반
 slug: hamlet
 ---

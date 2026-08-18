@@ -2,8 +2,8 @@
 title: 월든 (Walden; or, Life in the Woods)
 author: 헨리 데이비드 소로
 era: 1854년, 미국
-category: 문학·삶의 태도
-tags: [미니멀리즘, 자립, 자연, 본질, 시간]
+category: 자기수양·삶
+tags: [미니멀리즘, 자립, 자연, 본질, 시간, 문학, 삶의 태도]
 reliability: 원전기반
 slug: walden
 ---

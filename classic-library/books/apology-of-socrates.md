@@ -2,8 +2,8 @@
 title: 소크라테스의 변명 (Apologia Sokratous)
 author: 플라톤(Plato)
 era: 재판은 기원전 399년, 집필은 기원전 4세기 초로 추정
-category: 서양철학
-tags: [지적정직, 신념, 죽음, 성찰하는삶, 시민불복종]
+category: 철학·사상
+tags: [지적정직, 신념, 죽음, 성찰하는삶, 시민불복종, 서양철학]
 reliability: 원전기반
 slug: apology-of-socrates
 ---

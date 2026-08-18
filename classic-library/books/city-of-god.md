@@ -2,7 +2,7 @@
 title: 신국론 (선집)
 author: 아우구스티누스
 era: 기원후 413~426년경, 고대 로마(북아프리카)
-category: 철학·신학
+category: 철학·사상
 tags: [역사철학, 정치신학, 두도시론, 세속권력비판, 직선적역사관]
 reliability: 원전기반
 track: greatbooks

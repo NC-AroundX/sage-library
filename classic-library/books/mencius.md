@@ -2,8 +2,8 @@
 title: 맹자 (孟子)
 author: 맹자 (제자들과 함께 편찬)
 era: 기원전 4세기경, 중국 전국시대
-category: 동양사상·정치철학
-tags: [민본, 호연지기, 성선설, 리더십, 정당성]
+category: 철학·사상
+tags: [민본, 호연지기, 성선설, 리더십, 정당성, 동양사상, 정치철학]
 reliability: 원전기반
 slug: mencius
 ---

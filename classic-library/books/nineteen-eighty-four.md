@@ -2,8 +2,8 @@
 title: 1984 (Nineteen Eighty-Four)
 author: 조지 오웰 (George Orwell)
 era: 1949년 출간, 20세기 중반 영국
-category: 문학·디스토피아
-tags: [전체주의, 감시사회, 언어와사고통제, 진실의조작, 이중사고]
+category: 문학
+tags: [전체주의, 감시사회, 언어와사고통제, 진실의조작, 이중사고, 디스토피아]
 reliability: 요약검증
 slug: nineteen-eighty-four
 ---

@@ -2,8 +2,8 @@
 title: 파우스트 (Faust)
 author: 요한 볼프강 폰 괴테
 era: 1부 1808년, 2부 1832년, 독일 ⚠️
-category: 문학·희곡
-tags: [욕망, 성장, 계약, 구원, 끝없는추구]
+category: 문학
+tags: [욕망, 성장, 계약, 구원, 끝없는추구, 희곡]
 reliability: 원전기반
 slug: faust
 ---

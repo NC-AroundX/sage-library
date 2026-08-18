@@ -2,8 +2,8 @@
 title: 삼국지연의 (三國志演義)
 author: 나관중(羅貫中)
 era: 14세기 원말명초 집필, 배경은 후한말~서진 통일기(184~280년경)
-category: 문학·전략
-tags: [전략, 인재경영, 의리, 조직흥망, 리더십유형]
+category: 전략·리더십
+tags: [전략, 인재경영, 의리, 조직흥망, 리더십유형, 문학]
 reliability: 원전기반
 slug: romance-of-three-kingdoms
 ---

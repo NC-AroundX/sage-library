@@ -2,8 +2,8 @@
 title: 향연·파이돈
 author: 플라톤
 era: 기원전 4세기, 고대 아테네
-category: 서양철학
-tags: [사랑의사다리, 영혼불멸, 죽음, 소크라테스, 초월]
+category: 철학·사상
+tags: [사랑의사다리, 영혼불멸, 죽음, 소크라테스, 초월, 서양철학]
 reliability: 원전기반
 track: greatbooks
 slug: symposium-phaedo

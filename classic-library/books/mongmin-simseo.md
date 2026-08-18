@@ -2,8 +2,8 @@
 title: 목민심서 (牧民心書)
 author: 정약용 (다산)
 era: 1818년, 조선 후기 (강진 유배 중 저술)
-category: 한국고전·행정·리더십
-tags: [공직윤리, 실무리더십, 청렴, 애민, 조직운영]
+category: 한국고전
+tags: [공직윤리, 실무리더십, 청렴, 애민, 조직운영, 행정]
 reliability: 원전기반
 slug: mongmin-simseo
 ---

@@ -2,8 +2,8 @@
 title: 자본론 1권·공산당 선언 (개요)
 author: 카를 마르크스·프리드리히 엥겔스
 era: 1848년(공산당 선언)·1867년(자본론 1권), 독일·영국(집필지)
-category: 경제·사회사상
-tags: [잉여가치론, 상품물신주의, 계급투쟁, 소외된노동, 역사유물론]
+category: 경제·경영
+tags: [잉여가치론, 상품물신주의, 계급투쟁, 소외된노동, 역사유물론, 사회사상]
 reliability: 원전기반
 track: greatbooks
 slug: capital-and-communist-manifesto

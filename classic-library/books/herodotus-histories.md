@@ -2,7 +2,7 @@
 title: 역사 (Historiai)
 author: 헤로도토스 (Herodotos)
 era: 기원전 5세기(집필), 고대 그리스
-category: 역사
+category: 역사·인물
 tags: [역사서술의기원, 문화비교, 페르시아전쟁, 인과관계, 다양성]
 reliability: 원전기반
 slug: herodotus-histories

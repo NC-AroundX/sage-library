@@ -2,8 +2,8 @@
 title: 돈키호테 (Don Quixote)
 author: 미겔 데 세르반테스
 era: 1605년(1부), 1615년(2부), 스페인
-category: 문학·소설
-tags: [이상주의, 도전, 자기서사, 현실과이상, 웃음]
+category: 문학
+tags: [이상주의, 도전, 자기서사, 현실과이상, 웃음, 소설]
 reliability: 원전기반
 slug: don-quixote
 ---

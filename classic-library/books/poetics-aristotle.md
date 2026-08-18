@@ -2,8 +2,8 @@
 title: 시학
 author: 아리스토텔레스
 era: 기원전 4세기, 고대 아테네
-category: 문예이론
-tags: [스토리텔링, 카타르시스, 플롯설계, 비극이론, 미메시스]
+category: 문학
+tags: [스토리텔링, 카타르시스, 플롯설계, 비극이론, 미메시스, 문예이론]
 reliability: 원전기반
 track: greatbooks
 slug: poetics-aristotle

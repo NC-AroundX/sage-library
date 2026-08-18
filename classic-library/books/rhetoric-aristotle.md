@@ -2,8 +2,8 @@
 title: 수사학 (Rhetorike)
 author: 아리스토텔레스(Aristotle)
 era: 기원전 4세기 (기원전 350년경 강의 원고로 추정)
-category: 커뮤니케이션
-tags: [설득, 에토스파토스로고스, 논증, 스피치, 콘텐츠기획]
+category: 철학·사상
+tags: [설득, 에토스파토스로고스, 논증, 스피치, 콘텐츠기획, 커뮤니케이션]
 reliability: 원전기반
 slug: rhetoric-aristotle
 ---

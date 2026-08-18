@@ -2,8 +2,8 @@
 title: 순수이성비판 (개요와 핵심)
 author: 임마누엘 칸트
 era: 1781년(초판)·1787년(2판), 프로이센
-category: 서양철학
-tags: [코페르니쿠스적전환, 인식의한계, 선험적종합판단, 현상과물자체, 이성의자기비판]
+category: 철학·사상
+tags: [코페르니쿠스적전환, 인식의한계, 선험적종합판단, 현상과물자체, 이성의자기비판, 서양철학]
 reliability: 원전기반
 track: greatbooks
 slug: critique-of-pure-reason

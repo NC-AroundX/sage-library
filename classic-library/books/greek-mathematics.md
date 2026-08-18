@@ -2,8 +2,8 @@
 title: 그리스 수학 (원론·아르키메데스)
 author: 유클리드·아르키메데스
 era: 기원전 3세기, 고대 그리스(알렉산드리아·시라쿠사)
-category: 과학사·수학
-tags: [공리적방법, 연역적논증, 응용과학, 창의성, 근사와추정]
+category: 과학·자연
+tags: [공리적방법, 연역적논증, 응용과학, 창의성, 근사와추정, 과학사, 수학]
 reliability: 원전기반
 track: greatbooks
 slug: greek-mathematics

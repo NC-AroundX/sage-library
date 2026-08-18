@@ -2,7 +2,7 @@
 title: 걸리버 여행기
 author: 조너선 스위프트
 era: 1726년(초판), 아일랜드·잉글랜드
-category: 문학·풍자
+category: 문학
 tags: [정치풍자, 상대적관점, 인간본성비판, 여행기의전복, 이성의한계]
 reliability: 원전기반
 track: greatbooks

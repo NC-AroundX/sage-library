@@ -2,8 +2,8 @@
 title: 리바이어던 (Leviathan)
 author: 토머스 홉스(Thomas Hobbes)
 era: 1651년, 잉글랜드 내전 직후
-category: 정치철학
-tags: [사회계약, 자연상태, 절대권력, 국가론, 안전과자유]
+category: 정치·사회
+tags: [사회계약, 자연상태, 절대권력, 국가론, 안전과자유, 정치철학]
 reliability: 원전기반
 slug: leviathan
 ---

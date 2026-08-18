@@ -2,8 +2,8 @@
 title: 자유론 (On Liberty)
 author: 존 스튜어트 밀
 era: 1859년, 영국
-category: 정치철학
-tags: [표현의자유, 다양성, 개인주의, 다수의횡포, 위해원칙]
+category: 정치·사회
+tags: [표현의자유, 다양성, 개인주의, 다수의횡포, 위해원칙, 정치철학]
 reliability: 원전기반
 slug: on-liberty
 ---

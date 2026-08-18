@@ -2,8 +2,8 @@
 title: 어린 왕자 (Le Petit Prince)
 author: 앙투안 드 생텍쥐페리 (Antoine de Saint-Exupéry)
 era: 1943년 출간, 20세기 중반 프랑스(미국 망명 중 집필)
-category: 문학·우화
-tags: [본질과보이지않는것, 관계와길들임, 순수함, 상실, 책임]
+category: 문학
+tags: [본질과보이지않는것, 관계와길들임, 순수함, 상실, 책임, 우화]
 reliability: 요약검증
 slug: the-little-prince
 ---

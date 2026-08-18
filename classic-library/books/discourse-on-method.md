@@ -2,7 +2,7 @@
 title: 방법서설 (Discours de la méthode)
 author: 르네 데카르트(René Descartes)
 era: 1637년, 프랑스(네덜란드 망명 중 집필)
-category: 철학
+category: 철학·사상
 tags: [방법적회의, 코기토, 이성, 문제해결, 근대철학]
 reliability: 원전기반
 slug: discourse-on-method

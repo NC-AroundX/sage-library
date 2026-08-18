@@ -2,8 +2,8 @@
 title: 국부론 (The Wealth of Nations)
 author: 애덤 스미스
 era: 1776년, 스코틀랜드 계몽주의
-category: 경제·사회
-tags: [분업, 시장, 인센티브, 보이지않는손, 생산성]
+category: 경제·경영
+tags: [분업, 시장, 인센티브, 보이지않는손, 생산성, 사회]
 reliability: 원전기반
 slug: wealth-of-nations
 ---

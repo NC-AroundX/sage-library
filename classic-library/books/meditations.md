@@ -2,8 +2,8 @@
 title: 명상록 (Meditations)
 author: 마르쿠스 아우렐리우스
 era: 서기 170년경, 로마 제국
-category: 스토아철학·자기수양
-tags: [자기통제, 회복탄력성, 죽음, 의무, 스토아]
+category: 자기수양·삶
+tags: [자기통제, 회복탄력성, 죽음, 의무, 스토아, 스토아철학]
 reliability: 원전기반
 slug: meditations
 ---

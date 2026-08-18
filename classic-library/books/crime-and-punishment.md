@@ -2,7 +2,7 @@
 title: 죄와 벌 (Преступление и наказание)
 author: 표도르 도스토옙스키
 era: 1866년, 러시아 (상트페테르부르크 배경)
-category: 문학·심리
+category: 문학
 tags: [죄의식, 구원, 인간심리, 이념의위험, 자기합리화]
 reliability: 원전기반
 slug: crime-and-punishment

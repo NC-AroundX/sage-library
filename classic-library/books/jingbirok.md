@@ -2,8 +2,8 @@
 title: 징비록 (懲毖錄)
 author: 유성룡(柳成龍)
 era: 1600년대 초 집필, 임진왜란(1592~1598) 종전 이후 회고
-category: 한국고전·역사
-tags: [위기관리, 반성, 국방, 리더십실패, 대비]
+category: 한국고전
+tags: [위기관리, 반성, 국방, 리더십실패, 대비, 역사]
 reliability: 원전기반
 slug: jingbirok
 ---

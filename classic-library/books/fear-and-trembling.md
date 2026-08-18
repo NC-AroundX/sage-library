@@ -2,8 +2,8 @@
 title: 공포와 전율
 author: 쇠렌 키르케고르
 era: 1843년, 덴마크(필명 요하네스 데 실렌티오)
-category: 철학·실존주의
-tags: [신앙의역설, 윤리의목적론적정지, 단독자, 무한한체념, 불안과결단]
+category: 철학·사상
+tags: [신앙의역설, 윤리의목적론적정지, 단독자, 무한한체념, 불안과결단, 실존주의]
 reliability: 원전기반
 track: greatbooks
 slug: fear-and-trembling

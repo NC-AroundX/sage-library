@@ -2,8 +2,8 @@
 title: 입센 희곡선 (인형의 집·들오리)
 author: 헨리크 입센
 era: 1879년(인형의 집)·1884년(들오리), 노르웨이
-category: 문학·희곡
-tags: [여성의자기실현, 가정이라는연극무대, 생존을위한거짓말, 근대사실주의연극, 진실의파괴력]
+category: 문학
+tags: [여성의자기실현, 가정이라는연극무대, 생존을위한거짓말, 근대사실주의연극, 진실의파괴력, 희곡]
 reliability: 원전기반
 track: greatbooks
 slug: ibsen-plays

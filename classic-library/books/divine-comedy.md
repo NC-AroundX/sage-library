@@ -2,8 +2,8 @@
 title: 신곡
 author: 단테 알리기에리
 era: 1308~1320년경, 중세 후기 이탈리아
-category: 문학·서사시
-tags: [사후세계여행, 정치풍자, 죄와벌의구조, 속어문학, 이성과사랑의안내자]
+category: 문학
+tags: [사후세계여행, 정치풍자, 죄와벌의구조, 속어문학, 이성과사랑의안내자, 서사시]
 reliability: 원전기반
 track: greatbooks
 slug: divine-comedy

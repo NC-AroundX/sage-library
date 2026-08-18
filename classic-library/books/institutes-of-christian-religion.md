@@ -2,8 +2,8 @@
 title: 기독교 강요 (선집 — 예정설·교회론)
 author: 장 칼뱅
 era: 1536년 초판(1559년 최종판), 종교개혁기 스위스(제네바)
-category: 신학
-tags: [예정설, 개혁교회론, 오직성경, 하나님의주권, 소명]
+category: 철학·사상
+tags: [예정설, 개혁교회론, 오직성경, 하나님의주권, 소명, 신학]
 reliability: 원전기반
 track: greatbooks
 slug: institutes-of-christian-religion

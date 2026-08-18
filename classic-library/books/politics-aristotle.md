@@ -2,8 +2,8 @@
 title: 정치학 (Politika)
 author: 아리스토텔레스(Aristotle)
 era: 기원전 4세기 (기원전 335~322년경, 리케이온 시기)
-category: 정치철학
-tags: [국가론, 시민, 정체분류, 중산층, 공동체]
+category: 정치·사회
+tags: [국가론, 시민, 정체분류, 중산층, 공동체, 정치철학]
 reliability: 원전기반
 slug: politics-aristotle
 ---

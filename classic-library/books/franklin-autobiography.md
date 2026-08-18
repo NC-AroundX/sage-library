@@ -2,7 +2,7 @@
 title: 프랭클린 자서전 (The Autobiography of Benjamin Franklin)
 author: 벤저민 프랭클린 (Benjamin Franklin)
 era: 집필 1771~1790년(미완성), 사후 출간 / 미국 건국시기
-category: 자기관리
+category: 자기수양·삶
 tags: [자기관리, 13가지덕목, 실용주의, 자기계발, 미국건국]
 reliability: 원전기반
 slug: franklin-autobiography

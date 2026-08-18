@@ -2,8 +2,8 @@
 title: 채근담 (菜根譚)
 author: 홍자성(洪自誠, 홍응명)
 era: 16세기 말~17세기 초, 중국 명나라
-category: 동양고전·처세
-tags: [처세, 균형, 중용, 담백함, 인생태도]
+category: 자기수양·삶
+tags: [처세, 균형, 중용, 담백함, 인생태도, 동양고전]
 reliability: 원전기반
 slug: caigentan
 ---

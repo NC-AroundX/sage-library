@@ -2,8 +2,8 @@
 title: 군중심리 (Psychologie des Foules / The Crowd)
 author: 귀스타브 르 봉 (Gustave Le Bon)
 era: 1895년, 프랑스 제3공화국
-category: 사회심리
-tags: [군중심리, 무의식, 선동, 대중사회, 집단행동]
+category: 정치·사회
+tags: [군중심리, 무의식, 선동, 대중사회, 집단행동, 사회심리]
 reliability: 원전기반
 slug: crowd-psychology
 ---

@@ -2,8 +2,8 @@
 title: 그리스 로마 신화 (불핀치의 신화)
 author: 토머스 불핀치 (Thomas Bulfinch)
 era: 1855년 출간, 19세기 미국 (그리스·로마 신화의 대중 편찬서)
-category: 신화·인문교양
-tags: [신화, 원형, 상징, 스토리텔링, 서양문화코드]
+category: 문학
+tags: [신화, 원형, 상징, 스토리텔링, 서양문화코드, 인문교양]
 reliability: 원전기반
 slug: bulfinch-mythology
 ---

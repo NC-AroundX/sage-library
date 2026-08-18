@@ -2,8 +2,8 @@
 title: 법의 정신
 author: 몽테스키외
 era: 1748년, 프랑스
-category: 정치철학
-tags: [삼권분립, 정체유형론, 풍토와법의관계, 견제와균형, 자유의제도적보장]
+category: 정치·사회
+tags: [삼권분립, 정체유형론, 풍토와법의관계, 견제와균형, 자유의제도적보장, 정치철학]
 reliability: 원전기반
 track: greatbooks
 slug: spirit-of-the-laws

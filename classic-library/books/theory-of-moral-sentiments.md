@@ -2,8 +2,8 @@
 title: 도덕감정론 (The Theory of Moral Sentiments)
 author: 애덤 스미스(Adam Smith)
 era: 1759년, 스코틀랜드 계몽주의 시기
-category: 윤리·경제
-tags: [공감, 공정한관찰자, 자기이익과도덕, 국부론의짝, 윤리심리학]
+category: 철학·사상
+tags: [공감, 공정한관찰자, 자기이익과도덕, 국부론의짝, 윤리심리학, 경제]
 reliability: 원전기반
 slug: theory-of-moral-sentiments
 ---

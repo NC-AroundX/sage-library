@@ -2,8 +2,8 @@
 title: 장자 (莊子)
 author: 장자(내편), 후학 편찬(외편·잡편)
 era: 기원전 4세기경, 중국 전국시대
-category: 동양사상
-tags: [자유, 상대주의, 무위, 소요유, 물아일체]
+category: 철학·사상
+tags: [자유, 상대주의, 무위, 소요유, 물아일체, 동양사상]
 reliability: 원전기반
 slug: zhuangzi
 ---

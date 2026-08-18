@@ -2,7 +2,7 @@
 title: 수상록 (Essais)
 author: 미셸 드 몽테뉴(Michel de Montaigne)
 era: 1580~1595년(사후 증보판), 프랑스 종교전쟁기
-category: 에세이
+category: 자기수양·삶
 tags: [자기성찰, 회의주의, 관용, 죽음, 에세이라는장르]
 reliability: 원전기반
 slug: essays-montaigne

@@ -2,8 +2,8 @@
 title: 우신예찬
 author: 데시데리위스 에라스뮈스
 era: 1509년 집필(1511년 출간), 르네상스 유럽(네덜란드·잉글랜드)
-category: 풍자·에세이
-tags: [르네상스인문주의, 자기풍자, 교회비판, 아이러니, 종교개혁의전조]
+category: 문학
+tags: [르네상스인문주의, 자기풍자, 교회비판, 아이러니, 종교개혁의전조, 에세이]
 reliability: 원전기반
 track: greatbooks
 slug: praise-of-folly

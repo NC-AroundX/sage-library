@@ -2,8 +2,8 @@
 title: 열하일기 (熱河日記)
 author: 박지원(朴趾源)
 era: 1780년(조선 정조 4년), 청나라 건륭제 칠순 축하 사절단 동행 기록
-category: 한국고전·기행
-tags: [실학, 개방성, 관찰력, 자기혁신, 이용후생]
+category: 한국고전
+tags: [실학, 개방성, 관찰력, 자기혁신, 이용후생, 기행]
 reliability: 원전기반
 slug: yeolha-ilgi
 ---

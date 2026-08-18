@@ -2,8 +2,8 @@
 title: 성학십도 (聖學十圖)
 author: 이황(李滉, 퇴계)
 era: 1568년, 조선 선조 원년
-category: 한국고전·철학
-tags: [성리학, 경(敬), 자기수양, 교육, 시각화]
+category: 한국고전
+tags: [성리학, 경(敬), 자기수양, 교육, 시각화, 철학]
 reliability: 원전기반
 slug: seonghak-sipdo
 ---

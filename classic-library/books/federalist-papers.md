@@ -2,8 +2,8 @@
 title: 연방주의자 논집
 author: 알렉산더 해밀턴·제임스 매디슨·존 제이
 era: 1787~1788년, 미국(뉴욕)
-category: 정치철학
-tags: [헌법설계, 파벌의통제, 견제와균형, 연방주의, 설득의수사학]
+category: 정치·사회
+tags: [헌법설계, 파벌의통제, 견제와균형, 연방주의, 설득의수사학, 정치철학]
 reliability: 원전기반
 track: greatbooks
 slug: federalist-papers

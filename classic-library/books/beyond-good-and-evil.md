@@ -2,8 +2,8 @@
 title: 선악의 저편
 author: 프리드리히 니체
 era: 1886년, 독일
-category: 서양철학
-tags: [힘에의의지, 노예도덕과주인도덕비판, 진리에대한회의, 관점주의, 도덕의계보학]
+category: 철학·사상
+tags: [힘에의의지, 노예도덕과주인도덕비판, 진리에대한회의, 관점주의, 도덕의계보학, 서양철학]
 reliability: 원전기반
 track: greatbooks
 slug: beyond-good-and-evil

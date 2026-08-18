@@ -2,7 +2,7 @@
 title: 난중일기 (亂中日記)
 author: 이순신(李舜臣)
 era: 1592~1598년, 조선 임진왜란기
-category: 한국고전·리더십
+category: 한국고전
 tags: [리더십, 위기관리, 기록의힘, 책임감, 실전전략]
 reliability: 원전기반
 slug: nanjung-ilgi

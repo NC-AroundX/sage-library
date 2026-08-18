@@ -2,7 +2,7 @@
 title: 사기 열전 (史記 列傳)
 author: 사마천 (司馬遷)
 era: 기원전 1세기경 (전한 시대) 완성 ⚠️
-category: 역사·인물론
+category: 역사·인물
 tags: [인물론, 처세, 리더십, 서사전략, 역사관]
 reliability: 원전기반
 slug: shiji-liezhuan

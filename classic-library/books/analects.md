@@ -2,8 +2,8 @@
 title: 논어 (論語)
 author: 공자 (제자들이 편찬)
 era: 기원전 5~4세기, 중국 춘추시대
-category: 동양사상·리더십
-tags: [리더십, 배움, 관계, 자기수양, 신뢰]
+category: 자기수양·삶
+tags: [리더십, 배움, 관계, 자기수양, 신뢰, 동양사상]
 reliability: 원전기반
 slug: analects
 ---

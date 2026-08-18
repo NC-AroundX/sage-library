@@ -2,8 +2,8 @@
 title: 엔네아데스 (선집)
 author: 플로티노스 (포르피리오스 편집)
 era: 기원후 3세기, 고대 로마(신플라톤주의)
-category: 철학·신비주의
-tags: [신플라톤주의, 유출설, 하나the One, 영혼의상승, 부정신학]
+category: 철학·사상
+tags: [신플라톤주의, 유출설, 하나the One, 영혼의상승, 부정신학, 신비주의]
 reliability: 원전기반
 track: greatbooks
 slug: enneads

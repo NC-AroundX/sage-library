@@ -2,8 +2,8 @@
 title: 역사철학강의 (개요)
 author: 게오르크 빌헬름 프리드리히 헤겔
 era: 1837년(사후 강의록 출간), 프로이센(베를린대 강의, 1820년대)
-category: 서양철학
-tags: [역사에서의이성, 변증법적발전, 자유의식의진보, 세계정신, 이성의간계]
+category: 철학·사상
+tags: [역사에서의이성, 변증법적발전, 자유의식의진보, 세계정신, 이성의간계, 서양철학]
 reliability: 원전기반
 track: greatbooks
 slug: philosophy-of-history-hegel

@@ -2,7 +2,7 @@
 title: 갈리아 전기 (Commentarii de Bello Gallico)
 author: 율리우스 카이사르 (Gaius Julius Caesar)
 era: 기원전 1세기(집필), 로마공화정 말기
-category: 역사·리더십
+category: 역사·인물
 tags: [군사리더십, 전략, 자기서사, 프로파간다, 정치적기록]
 reliability: 원전기반
 slug: caesar-gallic-wars

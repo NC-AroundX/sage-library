@@ -2,7 +2,7 @@
 title: 엥케이리디온 (담화록 편람)
 author: 에픽테토스 (아리아노스 편집)
 era: 기원후 1~2세기, 고대 로마(그리스인 노예 출신)
-category: 스토아철학
+category: 자기수양·삶
 tags: [통제의이분법, 감정관리, 회복탄력성, 실천철학, 스토아철학]
 reliability: 원전기반
 track: greatbooks

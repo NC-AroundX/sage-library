@@ -2,8 +2,8 @@
 title: 인간 이해력 탐구
 author: 데이비드 흄
 era: 1748년, 스코틀랜드
-category: 철학·인식론
-tags: [경험론, 인과관계의회의, 귀납의문제, 습관과믿음, 기적에대한회의]
+category: 철학·사상
+tags: [경험론, 인과관계의회의, 귀납의문제, 습관과믿음, 기적에대한회의, 인식론]
 reliability: 원전기반
 track: greatbooks
 slug: enquiry-concerning-human-understanding

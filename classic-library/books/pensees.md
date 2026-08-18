@@ -2,8 +2,8 @@
 title: 팡세 (Pensées)
 author: 블레즈 파스칼
 era: 1670년 사후 출간 (집필은 1650년대 후반) ⚠️, 프랑스
-category: 철학·에세이
-tags: [인간의조건, 생각하는갈대, 신앙과이성, 불확실성, 자기성찰]
+category: 철학·사상
+tags: [인간의조건, 생각하는갈대, 신앙과이성, 불확실성, 자기성찰, 에세이]
 reliability: 원전기반
 slug: pensees
 ---

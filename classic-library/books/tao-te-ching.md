@@ -2,8 +2,8 @@
 title: 도덕경 (道德經)
 author: 노자 (老子)
 era: 기원전 6~4세기경 추정, 중국 춘추전국시대 ⚠️
-category: 동양사상·철학
-tags: [무위, 역설의리더십, 유연함, 겸손, 자연]
+category: 철학·사상
+tags: [무위, 역설의리더십, 유연함, 겸손, 자연, 동양사상]
 reliability: 원전기반
 slug: tao-te-ching
 ---

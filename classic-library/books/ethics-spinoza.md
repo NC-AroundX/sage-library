@@ -2,8 +2,8 @@
 title: 에티카
 author: 바뤼흐 스피노자
 era: 1677년(사후 출간), 네덜란드
-category: 서양철학
-tags: [범신론, 기하학적방법, 정념의이해, 자유와필연, 코나투스]
+category: 철학·사상
+tags: [범신론, 기하학적방법, 정념의이해, 자유와필연, 코나투스, 서양철학]
 reliability: 원전기반
 track: greatbooks
 slug: ethics-spinoza

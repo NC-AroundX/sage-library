@@ -2,7 +2,7 @@
 title: 실낙원
 author: 존 밀턴
 era: 1667년(초판), 영국
-category: 문학·서사시
+category: 문학
 tags: [자유의지와타락, 반영웅, 정당화의수사학, 유혹과선택, 서사시전통]
 reliability: 원전기반
 track: greatbooks

@@ -2,8 +2,8 @@
 title: 프로테스탄트 윤리와 자본주의 정신 (Die protestantische Ethik und der Geist des Kapitalismus)
 author: 막스 베버
 era: 1904~1905년 논문 초판, 1920년 단행본 개정 ⚠️, 독일
-category: 사회학·경제사상
-tags: [일의의미, 소명, 자본주의기원, 프로테스탄티즘, 합리화]
+category: 경제·경영
+tags: [일의의미, 소명, 자본주의기원, 프로테스탄티즘, 합리화, 사회학, 경제사상]
 reliability: 원전기반
 slug: protestant-ethic
 ---

@@ -2,8 +2,8 @@
 title: 신기관 (노붐 오르가눔)
 author: 프랜시스 베이컨
 era: 1620년, 영국
-category: 철학·과학방법론
-tags: [귀납법, 우상론, 경험주의, 과학방법론, 지식의권력]
+category: 과학·자연
+tags: [귀납법, 우상론, 경험주의, 과학방법론, 지식의권력, 철학]
 reliability: 원전기반
 track: greatbooks
 slug: novum-organum

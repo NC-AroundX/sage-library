@@ -2,8 +2,8 @@
 title: 국가 (Politeia / The Republic)
 author: 플라톤
 era: 기원전 375년경, 고대 그리스
-category: 서양철학·정치
-tags: [정의, 교육, 이상사회, 동굴의비유, 리더십]
+category: 철학·사상
+tags: [정의, 교육, 이상사회, 동굴의비유, 리더십, 서양철학, 정치]
 reliability: 원전기반
 slug: republic
 ---

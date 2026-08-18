@@ -2,8 +2,8 @@
 title: 사회계약론 (Du contrat social)
 author: 장자크 루소(Jean-Jacques Rousseau)
 era: 1762년, 프랑스 계몽주의 시기
-category: 정치철학
-tags: [일반의지, 인민주권, 자유와평등, 민주주의원형, 혁명사상]
+category: 정치·사회
+tags: [일반의지, 인민주권, 자유와평등, 민주주의원형, 혁명사상, 정치철학]
 reliability: 원전기반
 slug: social-contract
 ---

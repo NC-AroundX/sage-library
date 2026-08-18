@@ -2,8 +2,8 @@
 title: 군주론 (Il Principe)
 author: 니콜로 마키아벨리
 era: 1513년 집필, 1532년 출간, 르네상스 이탈리아
-category: 정치·권력
-tags: [권력, 조직, 현실주의, 리더십, 운과 실력]
+category: 전략·리더십
+tags: [권력, 조직, 현실주의, 리더십, 운과 실력, 정치]
 reliability: 원전기반
 slug: the-prince
 ---

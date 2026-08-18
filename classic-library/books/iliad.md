@@ -2,8 +2,8 @@
 title: 일리아스 (Ilias)
 author: 호메로스
 era: 기원전 8세기경 정착(구전 전통은 그 이전), 고대 그리스
-category: 문학·서사시
-tags: [분노, 영웅주의, 명예, 전쟁의비극, 필멸성]
+category: 문학
+tags: [분노, 영웅주의, 명예, 전쟁의비극, 필멸성, 서사시]
 reliability: 원전기반
 track: greatbooks
 slug: iliad

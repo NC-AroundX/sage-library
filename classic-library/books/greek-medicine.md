@@ -2,8 +2,8 @@
 title: 그리스 의학 (히포크라테스 선서·갈레노스)
 author: 히포크라테스·갈레노스
 era: 기원전 5세기~기원후 2세기, 고대 그리스·로마
-category: 과학사·의학
-tags: [의료윤리, 임상관찰, 4체액설, 해악금지원칙, 경험과학]
+category: 과학·자연
+tags: [의료윤리, 임상관찰, 4체액설, 해악금지원칙, 경험과학, 과학사, 의학]
 reliability: 원전기반
 track: greatbooks
 slug: greek-medicine

@@ -2,8 +2,8 @@
 title: 꿈의 해석 (Die Traumdeutung)
 author: 지그문트 프로이트 (Sigmund Freud)
 era: 1899년 출간(초판 인쇄는 1900년으로 표기)⚠️, 오스트리아 빈
-category: 심리학
-tags: [무의식, 꿈, 소원충족, 정신분석, 억압]
+category: 철학·사상
+tags: [무의식, 꿈, 소원충족, 정신분석, 억압, 심리학]
 reliability: 원전기반
 slug: interpretation-of-dreams
 ---

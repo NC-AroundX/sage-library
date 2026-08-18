@@ -2,7 +2,7 @@
 title: 전쟁론 (Vom Kriege)
 author: 카를 폰 클라우제비츠 (Carl von Clausewitz)
 era: 사후 출간 1832년, 나폴레옹 전쟁 이후 프로이센
-category: 전략
+category: 전략·리더십
 tags: [전쟁의본질, 마찰, 중심, 정치와전쟁, 전략론]
 reliability: 원전기반
 slug: on-war

@@ -2,8 +2,8 @@
 title: 유토피아 (Utopia)
 author: 토머스 모어(Thomas More)
 era: 1516년, 튜더 왕조 초기 잉글랜드
-category: 정치철학
-tags: [이상사회, 사유재산비판, 풍자, 공동체설계, 대안체제]
+category: 정치·사회
+tags: [이상사회, 사유재산비판, 풍자, 공동체설계, 대안체제, 정치철학]
 reliability: 원전기반
 slug: utopia
 ---

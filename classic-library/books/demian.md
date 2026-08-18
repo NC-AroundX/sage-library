@@ -2,7 +2,7 @@
 title: 데미안 (Demian)
 author: 헤르만 헤세 (Hermann Hesse)
 era: 1919년, 독일 바이마르공화국 초기(1차대전 직후)
-category: 문학·성장
+category: 문학
 tags: [자아발견, 성장소설, 선악의경계, 정체성, 내면의소리]
 reliability: 원전기반
 slug: demian

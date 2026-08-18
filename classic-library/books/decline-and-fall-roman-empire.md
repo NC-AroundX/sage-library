@@ -2,7 +2,7 @@
 title: 로마제국 쇠망사 (선집)
 author: 에드워드 기번
 era: 1776~1789년(전6권), 잉글랜드
-category: 역사
+category: 역사·인물
 tags: [제국의쇠퇴, 내부부패론, 장기사관, 종교와정치의관계, 역사서술의문체]
 reliability: 원전기반
 track: greatbooks

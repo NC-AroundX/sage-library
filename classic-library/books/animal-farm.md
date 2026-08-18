@@ -2,8 +2,8 @@
 title: 동물농장 (Animal Farm)
 author: 조지 오웰 (George Orwell)
 era: 1945년 출간, 20세기 중반 영국
-category: 문학·우화
-tags: [권력의타락, 혁명의배신, 프로파간다, 정치풍자, 조직관성]
+category: 문학
+tags: [권력의타락, 혁명의배신, 프로파간다, 정치풍자, 조직관성, 우화]
 reliability: 요약검증
 slug: animal-farm
 ---

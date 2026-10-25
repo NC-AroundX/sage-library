@@ -62,6 +62,35 @@ KNOWN = {
 def base_title(t):
     return re.split(r"[(（]", t)[0].strip()
 
+def latin_in_parens(s):
+    """괄호 안에서 라틴 문자로 된 원어 표기만 뽑는다. (개요/선집 같은 한글 꼬리표는 제외)"""
+    for seg in re.findall(r"[(（]([^)）]*)[)）]", s):
+        seg = re.split(r"[,，]", seg)[0].strip()
+        if re.search(r"[A-Za-zÀ-ÿ]", seg) and not re.search(r"[가-힣]", seg):
+            return seg
+    return ""
+
+def clean_query(q):
+    """Open Library(Lucene) 쿼리를 깨는 특수문자 제거 — HTTP 422 방지."""
+    return re.sub(r"\s+", " ", re.sub(r"[:;\"'()\[\]{}\\/!?]|⚠️", " ", q)).strip()
+
+def candidate_queries(title_full, author_full):
+    """우선순위 순 검색어: 사전 → 원어 제목+저자 → 원어 제목 → 한글 제목."""
+    kor = base_title(title_full)
+    out = []
+    if kor in KNOWN:
+        out.append(KNOWN[kor])
+    t_lat, a_lat = latin_in_parens(title_full), latin_in_parens(author_full)
+    if t_lat:
+        out.append(f"{t_lat} {a_lat}".strip())
+        out.append(t_lat)
+    out.append(kor)
+    seen, uniq = set(), []
+    for q in map(clean_query, out):
+        if q and q not in seen:
+            seen.add(q); uniq.append(q)
+    return uniq
+
 def search_cover_id(query):
     url = "https://openlibrary.org/search.json?limit=5&q=" + urllib.parse.quote(query)
     req = urllib.request.Request(url, headers=UA)
@@ -90,22 +119,30 @@ def main():
         text = open(path, encoding="utf-8").read()
         m_slug = re.search(r"^slug:\s*(.+)$", text, re.M)
         m_title = re.search(r"^title:\s*(.+)$", text, re.M)
+        m_author = re.search(r"^author:\s*(.+)$", text, re.M)
         slug = (m_slug.group(1).strip() if m_slug
                 else os.path.splitext(os.path.basename(path))[0])
-        title = base_title(m_title.group(1).strip()) if m_title else slug
+        title_full = m_title.group(1).strip() if m_title else slug
+        title = base_title(title_full)
         dest = os.path.join(COVERS, f"{slug}.jpg")
         if os.path.exists(dest):
             skip += 1; continue
-        query = KNOWN.get(title, title)
-        try:
-            cid = search_cover_id(query)
-            if cid and download_cover(cid, dest):
-                ok += 1; print(f"O {title}")
-            else:
-                fail += 1; print(f"X {title} (표지 없음 — 타이포 표지 사용)")
-        except Exception as e:
-            fail += 1; print(f"X {title} ({e})")
-        time.sleep(1)  # 공개 API 예의
+        got, last_err = False, None
+        for query in candidate_queries(title_full, m_author.group(1).strip() if m_author else ""):
+            try:
+                cid = search_cover_id(query)
+                if cid and download_cover(cid, dest):
+                    got = True; break
+            except Exception as e:
+                last_err = e
+            time.sleep(1)  # 공개 API 예의
+        if got:
+            ok += 1; print(f"O {title}")
+        elif last_err:
+            fail += 1; print(f"X {title} ({last_err})")
+        else:
+            fail += 1; print(f"X {title} (표지 없음 — 타이포 표지 사용)")
+        time.sleep(1)
     print(f"\n완료: 신규 {ok} / 보유 {skip} / 미확보 {fail}")
 
 if __name__ == "__main__":
